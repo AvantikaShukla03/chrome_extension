@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Appearance Toggle</title>
+  <style>
+    .popup {
+      min-width: 344px;
+      min-height: 144px;
+      background: #ffffff;
+      box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      padding: 1rem;
+    }
+    h1 {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    .yellow {
+      color: #fbe36d;
+    }
+    p {
+      font-size: 0.75rem;
+    }
+    .button {
+      background-color: #fdfca3;
+      position: relative;
+      height: 2rem;
+      width: 4rem;
+      transition: 1s;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+    .circle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 32px;
+      width: 32px;
+      border-radius: 50%;
+      background-color: rgb(247, 208, 18);
+      pointer-events: none;
+      transition: 1s;
+    }
+    .half {
+      position: absolute;
+      width: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+    .half:first-child { left: 5px; }
+    .half:last-child {
+      right: 5px;
+      text-align: right;
+    }
+    @keyframes transformToblue {
+      0% { background-color: #fdfca3; }
+      100% { background-color: #8abff0; }
+    }
+    @keyframes transformToYellow {
+      0% { background-color: #8abff0; }
+      100% { background-color: #fdfca3; }
+    }
+    @keyframes moveToRight {
+      0% {
+        left: 0%;
+        transform: translateX(0%);
+        background-color: rgb(247, 208, 18);
+      }
+      100% {
+        left: 100%;
+        transform: translateX(-100%);
+        background-color: #8abff0;
+      }
+    }
+    @keyframes moveToLeft {
+      0% {
+        left: 100%;
+        transform: translateX(-100%);
+        background-color: #8abff0;
+      }
+      100% {
+        left: 0%;
+        transform: translateX(0%);
+        background-color: rgb(247, 208, 18);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="popup">
+    <div>
+      <h1><span class="yellow">Appearance</span></h1>
+      <p>Bored of looking at websites the same way? Meet "Appearance", a Chrome extension that changes websites from light to dark mode :)</p>
+    </div>
+    <div class="button">
+      <div class="half">On</div>
+      <div class="half">Off</div>
+      <div class="circle"></div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

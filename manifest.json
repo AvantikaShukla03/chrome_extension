@@ -1,21 +1,10 @@
 {
-    "name": "Appearance",
-    "description": "Go To Light mode and then dark mode and vice versa",
-    "version": "1.0.0",
-    "manifest_version": 2,
-    "background": {
-      "scripts": ["popup.js"],
-      "persistent": false  
-    },
-    "browser_action": {
-      "default_title": "appearance",
-      "default_popup": "index.html"
-    },
-    "permissions": [
-      "tabs",
-      "activeTab"
-    ]
+  "manifest_version": 3,
+  "name": "Appearance Toggle Extension",
+  "version": "1.0",
+  "description": "Toggle website appearance using appOn.js and appOff.js",
+  "permissions": ["tabs", "scripting", "activeTab"],
+  "action": {
+    "default_popup": "popup.html"
   }
-  
-  
-  
+}
